@@ -7,7 +7,7 @@
 <br>
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe0.png?raw=true">
+  <img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe01.png?raw=true">
   
 </div>
 
