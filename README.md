@@ -110,12 +110,38 @@ Una vez conseguido se compara con el json original para evaluar el éxito de la 
 
 <div align="center">
   
-<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe5.png?raw=true">
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_5.png?raw=true">
 
   
 </div>
   <br>
 
+****
+## Entrenamiento del modelo.
+Las facturas proporcionadas para el reto se dividen en cuatro tipos.
+Dado que el objetivo último del reto es conseguir un sistema que generalice bien, las facturas tipo 1 son reservadas como conjunto de prueba. Mientras que el resto se usan para entrenar el modelo. Los resultados para el conjunto validación (20% de los tres tipos restantes elegidos aleatoriamente), son buenos. Pero los del conjunto de prueba (las facturas que el modelo nunca ha visto) son mediocres.
+
+Para comprender mejor las causas de este pobre desempeño se repitió el proceso para cada uno de los tipos de facturas. Siendo los resultados igualmente mediocres para todos los tipos excepto el tipo 3. Algo que llama la atención puesto que el tipo 3 y el 2 son muy parecidos entre sí. excepto por la distribución del texto.
+
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_6.png?raw=true">
+
+  
+</div>
+
+Las facturas proporcionadas para el reto se dividen en cuatro tipos.
+Dado que el objetivo último del reto es conseguir un sistema que generalice bien, las facturas tipo 1 son reservadas como conjunto de prueba. Mientras que el resto se usan para entrenar el modelo. Los resultados para el conjunto validación (20% de los tres tipos restantes elegidos aleatoriamente), son buenos. Pero los del conjunto de prueba (las facturas que el modelo nunca ha visto) son mediocres.
+
+Para comprender mejor las causas de este pobre desempeño se repitió el proceso para cada uno de los tipos de facturas. Siendo los resultados igualmente mediocres para todos los tipos excepto el tipo 3. Algo que llama la atención puesto que el tipo 3 y el 2 son muy parecidos entre sí. excepto por la distribución del texto.
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_7.png?raw=true">
+
+  
+</div>
 
 
 
