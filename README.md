@@ -142,7 +142,47 @@ Para comprender mejor las causas de este pobre desempeño se repitió el proceso
 
   
 </div>
+Las métricas de los conjuntos de pruebas de los distintos tipos de facturas sugerían que el modelo estaba siendo demasiado rígido con la estructura de las facturas. 
 
+La manera de probar esta hipótesis y de paso mejorar el rendimiento del modelo fue realizar un aumento de datos.
+
+El texto de cada factura se  separó por párrafos, y usando la librería Random se agrupan los párrafos en grupos de 1 a 5 párrafos, para posteriormente barajarlos  y crear una copia de la factura reordenada, doblando el tamaño del dataset.
+
+Los resultados del conjunto de prueba después de entrenar el modelo con el dataset aumentado son mucho mejores.
+
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_8.png?raw=true">
+
+  
+</div>
+
+****
+## Creación del json.
+Una vez comprobado que el aumento de datos mejoraba la regularización del modelo. Se vuelve a entrenar esta vez con los cuatro tipos de facturas.
+Si bien el modelo  ya ha realizado las predicciones. En el reto se pide como resultado un json con la misma estructura que los proporcionados para el entrenamiento.
+
+Se usa la misma lógica que para comprobar las etiquetas, solo que en esta ocasión la información extraída está bajo los efectos de la tokenización, debiendo ser reconstruida. Los resultados son buenos, pero no tan buenos como podrían sugerir las métricas de evaluación. El modelo muestra dificultades para clasificar correctamente tokens de naturaleza numérica.
+
+
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_9.png?raw=true">
+
+  
+</div>
+
+En un intento de mejorar el desempeño de BERT con valores numéricos. Se pasó de etiquetar únicamente el valor numérico a etiquetarlo junto con el símbolo del Euro o las abreviaturas de Kilovatio o Kilovatio/hora. Mejorando algo los resultados. Otra aproximación fue entrenar el modelo solo con valores numéricos, pero esta no dio los resultados esperados.
+
+Se complementan las predicciones de BERT con expresiones regulares. Se pasan estas reglas por todo el dataset y los resultados se almacenan en un nueva columna llamada ‘reglas’, creando un segundo diccionario con las mismas claves que se se usa para actualizar el resultante de las predicciones sólo si, el valor para ese campo está vacío.
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_10.png?raw=true">
+
+  
+</div>
 
 
 
