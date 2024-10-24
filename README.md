@@ -50,7 +50,7 @@ Para ello se hará fine-tuning de un modelo BERT y se evaluarán sus resultados 
 
 BERT (Bidirectional Encoder Representation from Transformers) es un modelo desarrollado por Google en 2018, actualmente está integrado en muchos productos de Google (Búsquedas, Translate, Gmail…).BERT tiene capacidad para captar el contexto bidireccional en una oración, lo que significa que puede entender el significado de una palabra en relación con las palabras que la rodean.  Esta competencia en la comprensión contextual lo hace especialmente adecuado para la tarea al que lo vamos a destinar.
 
-Inicialmente BERT se pre-entrenó en inglés, posteriormente se desarrolló un modelo multilingüe. Y al ser ‘open source’ se ha usado su arquitectura para pre-entrenarlo con muchas lenguas. El modelo elegido es: 'dccuchile/bert-base-spanish-wwm-cased' conocido coloquialmente como BETO![image](https://github.com/user-attachments/assets/8bc6b7dd-13f3-485e-ac10-2a22b09212f4)
+Inicialmente BERT se pre-entrenó en inglés, posteriormente se desarrolló un modelo multilingüe. Y al ser ‘open source’ se ha usado su arquitectura para pre-entrenarlo con muchas lenguas. El modelo elegido es: 'dccuchile/bert-base-spanish-wwm-cased' conocido coloquialmente como BETO.
 
 <div align="center">
   
@@ -69,16 +69,52 @@ La usada en este proyecto y probablemente la más común es NER (Named Entity Re
 
 <div align="center">
   
-<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe2.png?raw=true">
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe12.png?raw=true">
 
   
 </div>
   <br>
+  
+****
+## Creación del dataset y de las etiquetas NER
+
+Para la extracción del texto de las facturas se ha utilizado la la librería PyMuPDF, que destaca por la buena calidad de su documentación. El texto extraído se guardó en carpetas individuales para posteriormente crear un dataframe de Pandas con las siguientes columnas: ‘id’ que es el nombre de las facturas, ‘texto’ el texto de la factura convertido en en lista de palabras, ‘ner_tags’ que de momento está vacía y ‘json’ con el json correspondiente a cada factura.
+
+Antes de proceder a la creación de etiquetas se eliminaron las factura en las que había alguna coincidencia entre el nombre de la localidad y la provincia, tanto para cliente como para comercializadora, ya que eran difíciles de etiquetar, podían confundir al modelo y no eran muchas.
+
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_2.png?raw=true">
+
+  
+</div>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_4.png?raw=true">
+
+  
+</div>
+  <br>
+<br>
+Para saber si las etiquetas se han creado correctamente se recorre el camino inverso: Se buscan las etiquetas en la columna ‘NER_tags’ y a partir de sus índices se extrae la información de la columna texto.
+
+Los resultados se almacenan en un diccionario con el mismo aspecto que el json original.
+
+Son necesarios una serie de procesamientos, como por ejemplo, quedarnos una sola secuencia (ya que un mismo campo puede aparecer varias veces en la factura) o poner todas las fechas en formato "%d.%m.%Y".
+
+Una vez conseguido se compara con el json original para evaluar el éxito de la tarea.
 
 
 
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe5.png?raw=true">
 
-
+  
+</div>
+  <br>
 
 
 
