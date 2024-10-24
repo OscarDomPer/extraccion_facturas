@@ -28,11 +28,7 @@
 **Herramientas:**
 ![Hugging Face](https://img.shields.io/badge/-Hugging%20Face-FFD700?style=flat&logo=huggingface&logoColor=white)
 
-<br>
-<br>
-
 ## Introducción
-
 
 Este proyecto consiste en extraer algunos campos determinados de información de facturas eléctricas ficiticias. Estas
 facturas se presentan en distintos formatos, todas ellas en archivos PDF, pero con un orden y disposición diferente de los
@@ -42,7 +38,7 @@ Para ello se hará fine-tuning de un modelo BERT y se evaluarán sus resultados 
 
 <br>
 <br>
-<br>
+
 
 ****
 ## BERT
@@ -58,7 +54,7 @@ Inicialmente BERT se pre-entrenó en inglés, posteriormente se desarrolló un m
 
   
 </div>
-  <br>
+
 
 <br>
 El proceso de entrenamiento de BERT tiene dos etapas, el pre-entrenamiento, del que ya hemos hablado donde se entrena con una gran cantidad de datos no etiquetados y fine-tuning, donde se añaden capas nuevas según la tarea a realizar y se entrena el modelo con datos etiquetados. En este caso BERT se va a usar para token classification que consiste en asignar etiquetas a cada token en una secuencia de texto.  
