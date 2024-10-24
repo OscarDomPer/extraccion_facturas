@@ -56,7 +56,6 @@ Inicialmente BERT se pre-entrenó en inglés, posteriormente se desarrolló un m
 </div>
 
 
-<br>
 El proceso de entrenamiento de BERT tiene dos etapas, el pre-entrenamiento, del que ya hemos hablado donde se entrena con una gran cantidad de datos no etiquetados y fine-tuning, donde se añaden capas nuevas según la tarea a realizar y se entrena el modelo con datos etiquetados. En este caso BERT se va a usar para token classification que consiste en asignar etiquetas a cada token en una secuencia de texto.  
 
 Dentro de la clasificación de tokens hay varias tareas según la naturaleza de las etiquetas.
@@ -92,8 +91,7 @@ Antes de proceder a la creación de etiquetas se eliminaron las factura en las q
 
   
 </div>
-  <br>
-<br>
+
 Para saber si las etiquetas se han creado correctamente se recorre el camino inverso: Se buscan las etiquetas en la columna ‘NER_tags’ y a partir de sus índices se extrae la información de la columna texto.
 
 Los resultados se almacenan en un diccionario con el mismo aspecto que el json original.
