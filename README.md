@@ -36,10 +36,6 @@ campos. Sin embargo, la información de las facturas, aun con variaciones, es es
 campos comunes deben ser obtenidos de ellas.
 Para ello se hará fine-tuning de un modelo BERT y se evaluarán sus resultados con un conjunto de facturas que el modelo no habrá visto.
 
-<br>
-<br>
-
-
 ****
 ## BERT
 
