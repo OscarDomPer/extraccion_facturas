@@ -32,7 +32,7 @@
 <br>
 
 ## Introducción
-<br>
+
 
 Este proyecto consiste en extraer algunos campos determinados de información de facturas eléctricas ficiticias. Estas
 facturas se presentan en distintos formatos, todas ellas en archivos PDF, pero con un orden y disposición diferente de los
@@ -47,7 +47,7 @@ Para ello se hará fine-tuning de un modelo BERT y se evaluarán sus resultados 
 ****
 ## BERT
 
-<br>
+
 BERT (Bidirectional Encoder Representation from Transformers) es un modelo desarrollado por Google en 2018, actualmente está integrado en muchos productos de Google (Búsquedas, Translate, Gmail…).BERT tiene capacidad para captar el contexto bidireccional en una oración, lo que significa que puede entender el significado de una palabra en relación con las palabras que la rodean.  Esta competencia en la comprensión contextual lo hace especialmente adecuado para la tarea al que lo vamos a destinar.
 
 Inicialmente BERT se pre-entrenó en inglés, posteriormente se desarrolló un modelo multilingüe. Y al ser ‘open source’ se ha usado su arquitectura para pre-entrenarlo con muchas lenguas. El modelo elegido es: 'dccuchile/bert-base-spanish-wwm-cased' conocido coloquialmente como BETO![image](https://github.com/user-attachments/assets/8bc6b7dd-13f3-485e-ac10-2a22b09212f4)
@@ -69,7 +69,7 @@ La usada en este proyecto y probablemente la más común es NER (Named Entity Re
 
 <div align="center">
   
-<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe_2.png?raw=true">
+<img src="https://github.com/OscarDomPer/extraccion_facturas/blob/main/imaxes/imaxe2.png?raw=true">
 
   
 </div>
